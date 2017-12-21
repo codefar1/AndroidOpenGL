@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="davy.myapplication.MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="Test" />
+
+    <ImageView
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:clickable="true"
+        android:src="@mipmap/pic"
+        android:foreground="@drawable/button" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:clickable="true"
+        android:src="@mipmap/pic"
+        android:foreground="@drawable/button" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:clickable="true"
+        android:src="@mipmap/pic"
+        android:foreground="@drawable/button" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:clickable="true"
+        android:src="@mipmap/pic"
+        android:foreground="@drawable/button" />
+
+    <davy.myapplication.ViewA
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <davy.myapplication.layout.CustomLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tag="layout1"
+        tools:context="davy.myapplication.MainActivity">
+
+        <davy.myapplication.layout.CustomTextView
+            android:id="@+id/text1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:tag="text1"
+            android:text="TexyView1" />
+
+        <android.support.v4.widget.Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content" />
+
+        <davy.myapplication.layout.CustomTextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="text2"
+            android:text="TexyView2" />
+
+    </davy.myapplication.layout.CustomLinearLayout>
+
+    <!--<davy.myapplication.layout.CustomLinearLayout-->
+    <!--android:tag="layout2"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--tools:context="davy.myapplication.MainActivity">-->
+
+    <!--<davy.myapplication.layout.CustomTextView-->
+    <!--android:tag="text11"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="TexyView1" />-->
+
+    <!--<davy.myapplication.layout.CustomTextView-->
+    <!--android:tag="text22"-->
+    <!--android:layout_marginLeft="10dp"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="TexyView2" />-->
+
+    <!--</davy.myapplication.layout.CustomLinearLayout>-->
+</LinearLayout>
