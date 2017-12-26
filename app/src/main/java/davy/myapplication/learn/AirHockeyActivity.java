@@ -8,16 +8,16 @@
 ***/
 package davy.myapplication.learn;
 
+import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.pm.ConfigurationInfo;
 import android.opengl.GLSurfaceView;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-public class AirHockeyActivity extends AppCompatActivity {
+public class AirHockeyActivity extends Activity {
     /**
      * Hold a reference to our GLSurfaceView
      */

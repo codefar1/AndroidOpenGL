@@ -32,25 +32,25 @@ public class CustomRelativeLayout extends RelativeLayout {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         Log.d("TAG", TAG + ":onMeasure");
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        super.onLayout(changed, l, t, r, b);
         Log.d("TAG", TAG + ":onLayout");
+        super.onLayout(changed, l, t, r, b);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
         Log.d("TAG", TAG + ":onDraw");
+        super.onDraw(canvas);
     }
 
     @Override
     protected void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
         Log.d("TAG", TAG + ":dispatchDraw");
+        super.dispatchDraw(canvas);
     }
 }

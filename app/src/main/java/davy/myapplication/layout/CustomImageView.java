@@ -2,10 +2,11 @@ package davy.myapplication.layout;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.widget.TextView;
 
 /**
  * author: wangyonghua
@@ -14,19 +15,19 @@ import android.widget.TextView;
  * time: 15:06
  */
 
-public class CustomTextView extends TextView {
+public class CustomImageView extends AppCompatImageView {
 
-    public static final String TAG = "CustomTextView";
+    public static final String TAG = "CustomImageView";
 
-    public CustomTextView(Context context) {
+    public CustomImageView(Context context) {
         super(context);
     }
 
-    public CustomTextView(Context context, @Nullable AttributeSet attrs) {
+    public CustomImageView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public CustomTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public CustomImageView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -40,5 +41,11 @@ public class CustomTextView extends TextView {
     protected void onDraw(Canvas canvas) {
         Log.d("TAG", TAG + "-" + ":onDraw");
         super.onDraw(canvas);
+    }
+
+    @Override
+    public void setImageResource(@DrawableRes int resId) {
+        super.setImageResource(resId);
+        Log.d("TAG", TAG + "-" + ":setImageResource" + Log.getStackTraceString(new Throwable()));
     }
 }

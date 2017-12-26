@@ -87,24 +87,45 @@ public class AirHockeyRenderer implements Renderer {
 		};*/
 
 
+       /*
         float[] tableVerticesWithTriangles = {
             // Triangle 1
-            -0.5f, -0.5f, 
+            -0.5f, -0.5f,
              0.5f,  0.5f,
             -0.5f,  0.5f,
 
             // Triangle 2
-            -0.5f, -0.5f, 
-             0.5f, -0.5f, 
+            -0.5f, -0.5f,
+             0.5f, -0.5f,
              0.5f,  0.5f,
 
             // Line 1
-            -0.5f, 0f, 
+            -0.5f, 0f,
              0.5f, 0f,
 
             // Mallets
-            0f, -0.25f, 
+            0f, -0.25f,
             0f,  0.25f
+        }; */
+
+        float[] tableVerticesWithTriangles = {
+                // Triangle 1
+                -0.5f, -0.5f, 1f, 1f, 1f,
+                0.5f,  0.5f, 0.7f, 0.7f, 0.7f,
+                -0.5f,  0.5f, 0.7f, 0.7f, 0.7f,
+
+                // Triangle 2
+                -0.5f, -0.5f, 0.7f, 0.7f, 0.7f,
+                0.5f, -0.5f, 0.7f, 0.7f, 0.7f,
+                0.5f,  0.5f, 0.7f, 0.7f, 0.7f,
+
+                // Line 1
+                -0.5f, 0f, 1f, 0f, 0f,
+                0.5f, 0f, 1f, 1f, 1f,
+
+                // Mallets
+                0f, -0.25f, 0f, 0f, 1f,
+                0f,  0.25f, 1f, 0f, 0f
         };
         
         vertexData = ByteBuffer

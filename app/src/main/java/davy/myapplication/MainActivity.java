@@ -2,43 +2,86 @@ package davy.myapplication;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
-import davy.myapplication.opengl.MyGLSurfaceView;
+import com.github.gcacace.signaturepad.views.SignaturePad;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import davy.myapplication.layout.CustomImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MyGLSurfaceView mGLView;
+    @BindView(R.id.image)
+    CustomImageView customImageView;
+
+    int i = 0;
+    private SignaturePad mSignaturePad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
-//        final ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
-//        final ConfigurationInfo configurationInfo = activityManager.getDeviceConfigurationInfo();
-//
-//        final boolean supportsEs2 = configurationInfo.reqGlEsVersion >= 0x20000
-//                || (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1
-//                && (Build.FINGERPRINT.startsWith("unknown")
-//                || Build.FINGERPRINT.startsWith("generic")));
-//
-//
-//        // 创建一个GLSurfaceView对象，并将其设置为当前Activity的ContentView
-//        mGLView = new MyGLSurfaceView(this);
-//        setContentView(mGLView);
+//        Glide.with(this).load(R.mipmap.pic1).asBitmap().into(new SimpleTarget<Bitmap>(customImageView.getLayoutParams().width, customImageView.getLayoutParams().height) {
+//            @Override
+//            public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+//                Drawable drawable = new BitmapDrawable(getResources(), resource);
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+//                    customImageView.setBackground(drawable);
+//                }
+//            }
+//        });
 
+        mSignaturePad = (SignaturePad) findViewById(R.id.signature_pad);
+        mSignaturePad.setOnSignedListener(new SignaturePad.OnSignedListener() {
 
-        setContentView(R.layout.color);
+            @Override
+            public void onStartSigning() {
+                //Event triggered when the pad is touched
+            }
+
+            @Override
+            public void onSigned() {
+                //Event triggered when the pad is signed
+            }
+
+            @Override
+            public void onClear() {
+                //Event triggered when the pad is cleared
+            }
+        });
     }
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        mGLView.onResume();
-//    }
-//
-//    @Override
-//    protected void onPause() {
-//        super.onPause();
-//        mGLView.onPause();
-//    }
+    @OnClick(R.id.button)
+    public void text(View view) {
+        if (i % 2 == 0) {
+//            Glide.with(this).load(R.mipmap.pic1).asBitmap().into(customImageView);
+//            Glide.with(this).load(R.mipmap.pic1).asBitmap().into(new SimpleTarget<Bitmap>(customImageView.getLayoutParams().width, customImageView.getLayoutParams().height) {
+//                @Override
+//                public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+//                    Drawable drawable = new BitmapDrawable(getResources(), resource);
+//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+//                        customImageView.setBackground(drawable);
+//                    }
+//                }
+//            });
+            customImageView.setImageResource(R.mipmap.pic1);
+        } else {
+//            Glide.with(this).load(R.mipmap.pic2).asBitmap().into(customImageView);
+//            Glide.with(this).load(R.mipmap.pic2).asBitmap().into(new SimpleTarget<Bitmap>(customImageView.getLayoutParams().width, customImageView.getLayoutParams().height) {
+//                @Override
+//                public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+//                    Drawable drawable = new BitmapDrawable(getResources(), resource);
+//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+//                        customImageView.setBackground(drawable);
+//                    }
+//                }
+//            });
+            customImageView.setImageResource(R.mipmap.pic2);
+        }
+        i++;
+    }
 }

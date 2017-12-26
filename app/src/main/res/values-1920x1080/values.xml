@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="y1">5px</dimen>
+    <dimen name="y10">50px</dimen>
+    <dimen name="y100">500px</dimen>
+    <dimen name="y50">250px</dimen>
+</resources>
